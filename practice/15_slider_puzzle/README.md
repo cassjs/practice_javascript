@@ -10,8 +10,8 @@ None
 Displays 15 shuffled tiles that you can slide right, left, up, or down to solve the puzzle. 
 
 ## Program Output Example:
-Shuffled:
+**Shuffled:**  
 ![](images/screenshot_program-output_1.png)
 
-Solved:
+**Solved:**  
 ![](images/screenshot_program-output_2.png)
