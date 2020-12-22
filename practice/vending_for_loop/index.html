@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang= en>
+<head>
+	<title>Vending Machine</title>
+	<script>
+    function selected() {
+    let numSelected = 0;
+    const selectForm = document.querySelector('#selectForm');
+    for (let i = 0; i < selectForm.options.length; i++) {
+        if (selectForm.options[i].selected) numSelected++;
+        }
+        return numSelected;
+        }
+        window.onload= function(){
+            let numSelected = document.getElementById('buttn').addEventListener('click',function() {
+            document.getElementById('result').innerHTML= selected()
+            })
+        };
+    </script>
+</head>
+
+    <body>
+    <div>
+    <h2>Pick items you would like to purchase from the Vending Machine:</h2>
+    <h3>(Limit 1 per item)</h3>
+    <select id="selectForm" multiple>
+        <option>Coffee - $1.50</option>
+        <option>Tea - $1.00</option>
+        <option>Shortcake - $3.00</option>
+        <option>Donut - $1.50</option>
+    </select>
+    <br><br>
+    <button id="buttn">Count # Items</button>
+
+    <br>
+    <p id="result"></p>
+      
+    <p><u>Note:</u><br>
+    - For windows: Hold down the control (ctrl) button to select multiple options<br>
+    - For Mac: Hold down the command button to select multiple options
+    </p>
+    </div>
+</body>
+
+</html>

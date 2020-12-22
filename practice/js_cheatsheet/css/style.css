@@ -1,0 +1,80 @@
+/*
+File Name: style.css
+Date: 10/13/20
+Programmer: Jessica Cassidy
+*/
+
+
+/* MOBILE STYLESHEET */
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Play', sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+
+}
+
+div {
+	padding: 1.1em;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.4em;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+th {
+    font-weight: bold;
+}
+
+table, th, td {
+  border: 1px solid black;
+  padding: .5em;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.author {
+	text-align: right;
+}
+
+
+/*
+TABLET STYLESHEET
+The following CSS affects all screen sizes larger than 480 pixels wide.
+*/
+
+@media only screen and (min-width: 481px) {
+
+    body {
+        font-size: 14px;
+    }
+
+}
+
+
+/*
+DESKTOP STYLESHEET
+The following CSS affects all screen sizes larger than 1024 pixels wide.
+*/
+
+@media only screen and (min-width: 1025px) {
+    header, main, footer {
+        padding: 2em;
+    }
+
+}

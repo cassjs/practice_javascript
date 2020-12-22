@@ -1,0 +1,83 @@
+<!--
+File Name: index.html
+Date: 10/30/2020
+Author: Jessica Cassidy
+
+Description: The Doggy Daycare Calculator calculates the number of dogs and hours entered by a user. 
+The hours correspond to the Hours Rate Type: hourly, half day, and full day rates.
+
+| Length                                       | Rate           | Additional Dog |  
+| -------------------------------------------- | ---------------| ---------------|
+| Hourly (Max 2 hours)                         | $ 7.00/Hr      | N/A            |
+| Half Day (Over 2 hrs - up to 5 hours max)    | $ 20.00        | $ 15.00        |
+| Full Day (Over 5 hours - up to 11 hours max) | $ 30.00        | $ 25.00        |
+
+-->
+
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<title>Doggy Daycare Rate Calculator</title>
+        <link href="css/reset.css" rel="stylesheet" type="text/css">
+        <link href="css/helper.css" rel="stylesheet" type="text/css">
+        <link href="css/grid.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <!-- Font from Google Fonts, Roboto: 'https://fonts.google.com/specimen/Roboto?sidebar.open=true&selection.family=Roboto:wght@300;400;500;700' -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <script src="doggy_daycare_calculator.js">
+          window.onload= function(){
+              
+          }
+      </script>
+</head>
+
+
+<body>
+    <main>
+        <h1>Doggy Daycare Calculator</h1>
+ 
+<!-- Table -->
+    <h2>Rates:</h2>
+    <table>
+      <tr>
+        <th>Length</th>
+        <th>Rate</th> 
+        <th>Additional Dog</th>
+      </tr>
+      <tr>
+        <td>Hourly (Max 2 hours)</td>
+        <td>$7.00/Hr</td>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <td>Half Day (Over 2 hrs - up to 5 hours max)</td>
+        <td>$20.00</td>
+        <td>$15.00</td>
+      </tr>
+      <tr>
+        <td>Full Day (Over 5 hours - up to 11 hours max)</td>
+        <td>$30.00</td>
+        <td>$25.00</td>
+      </tr>
+    </table>
+    <br>
+        <section> 
+            <div>
+                <!-- Input - Dogs -->
+                Enter Number of Dogs:  <input type="text" id="inputDogs">
+                <br>
+                <!-- Input 2 - Hours -->
+                Enter Number of Hours: <input type="text"  id="inputHours">
+                <br>
+                <!-- Button Calculate Rate -->     
+                <button id="calcBttn" onclick="calcRate()"> Calculate Rate </button>
+                <br>
+                <b>Rate Total: $ </b><br>
+            </div>
+                <!-- Rate Result -->
+                <span id="showResult"></span>
+        </section>
+    </main>
+</body>
+</html>
