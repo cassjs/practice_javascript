@@ -4,7 +4,7 @@
 
 ## Description: 
 The Doggy Daycare Calculator calculates the number of dogs and hours entered by a user. The hours correspond to the Hours Rate Type: hourly, half day, and full day rates.\
-(See Python Version: https://github.com/cassjsdev/python_projects/blob/master/doggy_daycare_calculator/README.md!)
+(See Python Version: https://github.com/cassjsdev/python_projects/blob/master/doggy_daycare_calculator/README.md)
 
 | Length                                       | Rate           | Additional Dog |  
 | -------------------------------------------- | ---------------| ---------------|
