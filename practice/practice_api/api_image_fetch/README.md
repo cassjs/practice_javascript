@@ -10,4 +10,4 @@ None
 Displays images that were fetched via the client-side.
 
 ## Program Output Example:
-![](images/screenshot_program-output.pngimages/screenshot_program-output.png)
+![](images/screenshot_program-output.png)
