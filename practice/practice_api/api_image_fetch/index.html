@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Train Data/APIs 1</title>
+</head>
+<body>
+    <h1>Fetching Rainbows!</h1>
+
+    <script>
+        console.log('about to fetch a rainbow'); // Preliminary check to see if it's working
+            
+        const filenames = [    // Here you are converting the images into an array to fetch many photos at once. 
+            'images/rainbow.jpg',
+            'images/rainbow_umbrellas.jpg',
+            'images/rainbow_hall.jpg'
+        ];
+
+        async function catchRainbows(filenames) {
+        for (let filename of filenames) {
+            const response = await fetch(filename);
+            const blob = await response.blob();
+            const img = document.createElement('img');
+            img.src = URL.createObjectURL(blob);
+            img.width = '280';
+            document.body.append(img);
+            }
+        };
+
+        catchRainbows(filenames)  // Added for Error Handling 
+	        .then(response => {
+                console.log('success, yay!');
+			})
+			.catch(error => {
+                console.log('error!');
+                console.error(error);
+            });
+
+        
+        //NOTE: Images used from Unsplash
+    </script>
+</body>
+</html>
