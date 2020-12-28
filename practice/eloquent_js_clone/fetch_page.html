@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Fetch Page</title>
+    <link rel="stylesheet" href="./Fetch Page_files/fetch_page.css">
+    <script src="./Fetch Page_files/fetch_page.js"></script>
+    <script>
+        var BASE = "http://eloquentjavascript.net/index.html";
+        var PAGE =  "PCFkb2N0eXBlIGh0bWw+CjxoZWFkPgogIDxtZXRhIGNoYXJzZXQ9InV0Zi04Ij4KICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEiPgogIDx0aXRsZT5FbG9xdWVudCBKYXZhU2NyaXB0PC90aXRsZT4KICA8bGluayByZWw9c3R5bGVzaGVldCBocmVmPSJjc3MvZWpzLmNzcyI+CiAgPHN0eWxlPgogICAgYXJ0aWNsZSB7IGRpc3BsYXk6IGZsZXg7IG1hcmdpbjogMCAyZW07IGZsZXgtd3JhcDogd3JhcDsgbWF4LXdpZHRoOiBub25lOyBtYXgtd2lkdGg6IGNhbGMoMzhlbSArIDUwMHB4KTsgfQogICAgI2NvdmVyIHsgZmxleC1iYXNpczogNDgwcHg7IG1heC13aWR0aDogMzVlbTsgZmxleC1ncm93OiAxOyBtYXJnaW4tcmlnaHQ6IDNlbTsgfQogICAgI2NvbnRlbnRzIHsgZmxleC1iYXNpczogNTAwcHg7IGZsZXgtZ3JvdzogMTsgbWF4LXdpZHRoOiAzNWVtOyAgfQogICAgI2xpbmtzIHsgZmxleC1iYXNpczogMTAwJTsgbWF4LXdpZHRoOiAzNWVtOyB9CiAgICBsaS5jb250ZW50cy1pbnRybzpiZWZvcmUgeyBkaXNwbGF5OiBub25lOyB9CiAgICAudG9jIGgzIHsgZmxvYXQ6IHJpZ2h0OyBmb250LWZhbWlseTogaW5oZXJpdDsgbWFyZ2luOiAwOyBmb250LXdlaWdodDogbm9ybWFsOyBmb250LXNpemU6IDkwJTsgfQogICAgQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNTg1cHgpIHsgLnRvYyBoMyB7IGRpc3BsYXk6IG5vbmUgfX0KICAgIEBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDUwMHB4KSB7ICNjb3ZlciB7IG1hcmdpbi1yaWdodDogMCB9IGFydGljbGUgeyBtYXJnaW46IDAgfSB9CiAgICB1bC5saW5rcyB7IGxpc3Qtc3R5bGUtdHlwZTogY2lyY2xlOyB9CiAgICBpbWcubG9nbyB7IHZlcnRpY2FsLWFsaWduOiB0ZXh0LXRvcDsgcGFkZGluZzogMHB4IDRweDsgYm9yZGVyOiAwOyB9CiAgPC9zdHlsZT4KPC9oZWFkPgoKPGFydGljbGU+CjxkaXYgaWQ9Y292ZXI+CgogIDxwIHN0eWxlPSJtYXJnaW46IDFlbSAwIj4KICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3LmFtYXpvbi5jb20vZ3AvcHJvZHVjdC8xNTkzMjc5NTA3L3JlZj1hc19saV90bD9pZT1VVEY4JmNhbXA9MTc4OSZjcmVhdGl2ZT05MzI1JmNyZWF0aXZlQVNJTj0xNTkzMjc5NTA3JmxpbmtDb2RlPWFzMiZ0YWc9bWFyaWpoYXZlci0yMCZsaW5rSWQ9ZDg2NDJjMDQ1Nzk1NGYwM2UyN2MwMmIwMDM0ZDBkNjAiPgogICAgICA8aW1nIHNyYz0iaW1nL2NvdmVyLmpwZyIgYWx0PSJDb3ZlciBpbWFnZSIgc3R5bGU9ImJvcmRlcjogMXB4IHNvbGlkIGJsYWNrOyBtYXgtd2lkdGg6IDEwMCU7IGJveC1zaGFkb3c6IDRweCA0cHggN3B4IHJnYmEoMCwgMCwgMCwgMC40KSI+CiAgICA8L2E+CiAgPC9wPgoKICA8aDE+RWxvcXVlbnQgSmF2YVNjcmlwdDxkaXYgc3R5bGU9ImZvbnQtc2l6ZTogNzAlIj4zcmQgZWRpdGlvbiAoMjAxOCk8L2Rpdj48L2gyPgoKICA8cD5UaGlzIGlzIGEgYm9vayBhYm91dCBKYXZhU2NyaXB0LCBwcm9ncmFtbWluZywgYW5kIHRoZSB3b25kZXJzIG9mCiAgdGhlIGRpZ2l0YWwuIFlvdSBjYW4gcmVhZCBpdCBvbmxpbmUgaGVyZSwgb3IgZ2V0IHlvdXIgb3duCiAgPGEgaHJlZj0iaHR0cHM6Ly93d3cuYW1hem9uLmNvbS9ncC9wcm9kdWN0LzE1OTMyNzk1MDcvcmVmPWFzX2xpX3RsP2llPVVURjgmY2FtcD0xNzg5JmNyZWF0aXZlPTkzMjUmY3JlYXRpdmVBU0lOPTE1OTMyNzk1MDcmbGlua0NvZGU9YXMyJnRhZz1tYXJpamhhdmVyLTIwJmxpbmtJZD1kODY0MmMwNDU3OTU0ZjAzZTI3YzAyYjAwMzRkMGQ2MCI+cGFwZXJiYWNrCiAgY29weTwvYT4uPC9wPgoKICA8cD5Xcml0dGVuIGJ5IE1hcmlqbiBIYXZlcmJla2UuPC9wPgoKICA8ZGl2IHN0eWxlPSJmb250LXNpemU6IDgwJSI+CiAgPHA+TGljZW5zZWQgdW5kZXIKICBhIDxhIGhyZWY9Imh0dHBzOi8vY3JlYXRpdmVjb21tb25zLm9yZy9saWNlbnNlcy9ieS1uYy8zLjAvIj5DcmVhdGl2ZQogIENvbW1vbnMgYXR0cmlidXRpb24tbm9uY29tbWVyY2lhbCBsaWNlbnNlPC9hPi4gQWxsIGNvZGUgaW4gdGhpcyBib29rCiAgbWF5IGFsc28gYmUgY29uc2lkZXJlZCBsaWNlbnNlZCB1bmRlcgogIGFuIDxhIGhyZWY9Imh0dHBzOi8vZWxvcXVlbnRqYXZhc2NyaXB0Lm5ldC9jb2RlL0xJQ0VOU0UiPk1JVCBsaWNlbnNlPC9hPi48L3A+CgogIDxwPklsbHVzdHJhdGlvbnMgYnkgdmFyaW91cyBhcnRpc3RzOiBDb3ZlciBhbmQgY2hhcHRlciBpbGx1c3RyYXRpb25zCiAgYnkgPGEgaHJlZj0iaHR0cDovL21hZGFsaW5hdGFudGFyZWFudS5jb20vIj5NYWRhbGluYSBUYW50YXJlYW51PC9hPi4KICBQaXhlbCBhcnQgaW4gQ2hhcHRlcnMgNyBhbmQgMTYgYnkgQW50b25pbyBQZXJkb21vIFBhc3Rvci4gUmVndWxhcgogIGV4cHJlc3Npb24gZGlhZ3JhbXMgaW4gQ2hhcHRlciA5IGdlbmVyYXRlZAogIHdpdGggPGEgaHJlZj0iaHR0cHM6Ly9yZWdleHBlci5jb20iPnJlZ2V4cGVyLmNvbTwvYT4gYnkgSmVmZgogIEF2YWxsb25lLiBWaWxsYWdlIHBob3RvZ3JhcGggaW4gQ2hhcHRlciAxMSBieSBGYWJyaWNlIENyZXV6b3QuIEdhbWUKICBjb25jZXB0IGZvciBDaGFwdGVyIDE2IGJ5IDxhIGhyZWY9Imh0dHA6Ly9sZXNzbWlsay5jb20iPlRob21hcwogIFBhbGVmPC9hPi48L3A+CgogIDxwPlRoZSB0aGlyZCBlZGl0aW9uIHdhcyBtYWRlIHBvc3NpYmxlCiAgYnkgPGEgaHJlZj0iYmFja2VyczMuaHRtbCI+MzI1IGZpbmFuY2lhbCBiYWNrZXJzPC9hPiwgbW9zdAogIG5vdGFibHkgPGEgaHJlZj0iaHR0cHM6Ly9uZXh0am91cm5hbC5jb20vIj48aW1nIHNyYz0iaW1nL25leHRqb3VybmFsLnBuZyIKICBhbHQ9Ik5leHRqb3VybmFsIiBjbGFzcz1sb2dvPjwvYT4gYW5kIDxhIGhyZWY9Imh0dHBzOi8vd3d3LmhvbGJlcnRvbnNjaG9vbC5jb20vIj48aW1nIHNyYz0iaW1nL2hvbGJlcnRvbi5wbmciIGFsdD0iSG9sYmVydG9uIFNjaG9vbCIgY2xhc3M9bG9nbz48L2E+LiBUaGUgc2Vjb25kIGVkaXRpb24KICB3YXMgc3VwcG9ydGVkIGJ5IDxhIGhyZWY9ImJhY2tlcnMuaHRtbCI+NDU0IGJhY2tlcnM8L2E+LCB3aXRoCiAgc2lnbmlmaWNhbnQgY29udHJpYnV0aW9ucwogIGZyb20gPGEgaHJlZj0iaHR0cHM6Ly93d3cubW96aWxsYS5vcmcvZW4tVVMvIj48aW1nIHNyYz0iaW1nL21vemlsbGFfbWluaS5wbmciCiAgYWx0PU1vemlsbGEKICBjbGFzcz1sb2dvPjwvYT4sIDxhIGhyZWY9Imh0dHBzOi8vd3d3LmhhY2tyZWFjdG9yLmNvbS8iPjxpbWcgc3JjPSJpbWcvaGFja19yZWFjdG9yX21pbmkucG5nIgogIGFsdD0iSGFjayBSZWFjdG9yIiBjbGFzcz1sb2dvPjwvYT4sCiAgYW5kIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lmdob3N0ZXJ5LmNvbS8iPjxpbWcgc3JjPSJpbWcvZ2hvc3RlcnlfbWluaS5wbmciCiAgYWx0PSJHaG9zdGVyeSIgY2xhc3M9bG9nbz48L2E+LjwvcD4KICA8L2Rpdj4KCjwvZGl2PgoKPGRpdiBpZD1jb250ZW50cz4KCiAgPGgyPkNvbnRlbnRzPC9oMj4KCiAgPG9sIGNsYXNzPXRvYz4KICAgIDxsaSBjbGFzcz0iY29udGVudHMtaW50cm8iPjxhIGhyZWY9IjAwX2ludHJvLmh0bWwiPkludHJvZHVjdGlvbjwvYT4KICAgIDxsaT4KICAgICAgPGgzPihQYXJ0IDE6IExhbmd1YWdlKTwvaDM+CiAgICAgIDxhIGhyZWY9IjAxX3ZhbHVlcy5odG1sIj5WYWx1ZXMsIFR5cGVzLCBhbmQgT3BlcmF0b3JzPC9hPgogICAgPC9saT4KICAgIDxsaT48YSBocmVmPSIwMl9wcm9ncmFtX3N0cnVjdHVyZS5odG1sIj5Qcm9ncmFtIFN0cnVjdHVyZTwvYT4KICAgIDxsaT48YSBocmVmPSIwM19mdW5jdGlvbnMuaHRtbCI+RnVuY3Rpb25zPC9hPgogICAgPGxpPjxhIGhyZWY9IjA0X2RhdGEuaHRtbCI+RGF0YSBTdHJ1Y3R1cmVzOiBPYmplY3RzIGFuZCBBcnJheXM8L2E+CiAgICA8bGk+PGEgaHJlZj0iMDVfaGlnaGVyX29yZGVyLmh0bWwiPkhpZ2hlci1vcmRlciBGdW5jdGlvbnM8L2E+CiAgICA8bGk+PGEgaHJlZj0iMDZfb2JqZWN0Lmh0bWwiPlRoZSBTZWNyZXQgTGlmZSBvZiBPYmplY3RzPC9hPgogICAgPGxpPjxhIGhyZWY9IjA3X3JvYm90Lmh0bWwiPlByb2plY3Q6IEEgUm9ib3Q8L2E+CiAgICA8bGk+PGEgaHJlZj0iMDhfZXJyb3IuaHRtbCI+QnVncyBhbmQgRXJyb3JzPC9hPgogICAgPGxpPjxhIGhyZWY9IjA5X3JlZ2V4cC5odG1sIj5SZWd1bGFyIEV4cHJlc3Npb25zPC9hPgogICAgPGxpPjxhIGhyZWY9IjEwX21vZHVsZXMuaHRtbCI+TW9kdWxlczwvYT4KICAgIDxsaT48YSBocmVmPSIxMV9hc3luYy5odG1sIj5Bc3luY2hyb25vdXMgUHJvZ3JhbW1pbmc8L2E+CiAgICA8bGk+PGEgaHJlZj0iMTJfbGFuZ3VhZ2UuaHRtbCI+UHJvamVjdDogQSBQcm9ncmFtbWluZyBMYW5ndWFnZTwvYT4KICAgIDxsaT4KICAgICAgPGgzPihQYXJ0IDI6IEJyb3dzZXIpPC9oMz4KICAgICAgPGEgaHJlZj0iMTNfYnJvd3Nlci5odG1sIj5KYXZhU2NyaXB0IGFuZCB0aGUgQnJvd3NlcjwvYT4KICAgIDwvbGk+CiAgICA8bGk+PGEgaHJlZj0iMTRfZG9tLmh0bWwiPlRoZSBEb2N1bWVudCBPYmplY3QgTW9kZWw8L2E+CiAgICA8bGk+PGEgaHJlZj0iMTVfZXZlbnQuaHRtbCI+SGFuZGxpbmcgRXZlbnRzPC9hPgogICAgPGxpPjxhIGhyZWY9IjE2X2dhbWUuaHRtbCI+UHJvamVjdDogQSBQbGF0Zm9ybSBHYW1lPC9hPgogICAgPGxpPjxhIGhyZWY9IjE3X2NhbnZhcy5odG1sIj5EcmF3aW5nIG9uIENhbnZhczwvYT4KICAgIDxsaT48YSBocmVmPSIxOF9odHRwLmh0bWwiPkhUVFAgYW5kIEZvcm1zPC9hPgogICAgPGxpPjxhIGhyZWY9IjE5X3BhaW50Lmh0bWwiPlByb2plY3Q6IEEgUGl4ZWwgQXJ0IEVkaXRvcjwvYT4KICAgIDxsaT4KICAgICAgPGgzPihQYXJ0IDM6IE5vZGUpPC9oMz4KICAgICAgPGEgaHJlZj0iMjBfbm9kZS5odG1sIj5Ob2RlLmpzPC9hPgogICAgPC9saT4KICAgIDxsaT48YSBocmVmPSIyMV9za2lsbHNoYXJpbmcuaHRtbCI+UHJvamVjdDogU2tpbGwtU2hhcmluZyBXZWJzaXRlPC9hPgogIDwvb2w+Cgo8L2Rpdj4KCjxkaXYgaWQ9bGlua3M+CgogIDxwPkEgcGFwZXIgdmVyc2lvbiBvZiBFbG9xdWVudCBKYXZhU2NyaXB0LCBpbmNsdWRpbmcgYW4gYWRkaXRpb25hbAogIGNoYXB0ZXIsIGlzIGJlaW5nIGJyb3VnaHQgb3V0CiAgYnkgPGEgaHJlZj0iaHR0cDovL3d3dy5ub3N0YXJjaC5jb20vZWpzMyI+Tm8gU3RhcmNoIFByZXNzPC9hPi48L3A+CgogIDxoMj5PdGhlciBwYWdlczwvaDI+CgogIDx1bCBjbGFzcz0ibGlua3MiPgogICAgPGxpPjxhIGhyZWY9ImNvZGUiPkNvZGUgc2FuZGJveCBhbmQgZXhlcmNpc2Ugc29sdXRpb25zPC9hPjwvbGk+CiAgICA8bGk+PGEgaHJlZj0iZXJyYXRhLmh0bWwiPkVycmF0YSBmb3IgdGhlIHBhcGVyIGJvb2s8L2E+PC9saT4KICAgIDxsaT48YSBocmVmPSJFbG9xdWVudF9KYXZhU2NyaXB0LnBkZiI+VGhpcyBib29rIGFzIGEgc2luZ2xlIFBERiBmaWxlPC9hPiAoJmFtcDsgPGEgaHJlZj0iRWxvcXVlbnRfSmF2YVNjcmlwdF9zbWFsbC5wZGYiPnNtYWxsIHZlcnNpb24gZm9yIG1vYmlsZTwvYT4pPC9saT4KICAgIDxsaT48YSBocmVmPSJodHRwczovL2Vsb3F1ZW50amF2YXNjcmlwdC5uZXQvRWxvcXVlbnRfSmF2YVNjcmlwdC5lcHViIj5UaGlzIGJvb2sgYXMgYW4gRVBVQiBmaWxlPC9hPjwvbGk+CiAgICA8bGk+PGEgaHJlZj0iaHR0cHM6Ly9lbG9xdWVudGphdmFzY3JpcHQubmV0L0Vsb3F1ZW50X0phdmFTY3JpcHQubW9iaSI+VGhpcyBib29rIGFzIGEgTU9CSSAoS2luZGxlKSBmaWxlPC9hPjwvbGk+CiAgICA8bGk+PGEgaHJlZj0iaHR0cHM6Ly9lbG9xdWVudGphdmFzY3JpcHQubmV0LzFzdF9lZGl0aW9uIj5UaGUgZmlyc3QgZWRpdGlvbiBvZiB0aGUgYm9vazwvYT48L2xpPgogICAgPGxpPjxhIGhyZWY9Imh0dHBzOi8vZWxvcXVlbnRqYXZhc2NyaXB0Lm5ldC8ybmRfZWRpdGlvbiI+VGhlIHNlY29uZCBlZGl0aW9uIG9mIHRoZSBib29rPC9hPjwvbGk+CiAgPC91bD4KCiAgPGgyPlRyYW5zbGF0aW9uczwvaDI+CgogIDxoMz5UaGlyZCBFZGl0aW9uPC9oMz4KCiAgPHVsIGNsYXNzPXRyYW5zbGF0aW9ucz4KICAgIDxsaT48YSBocmVmPSJodHRwOi8vZWxvcXVlbnRqcy5pci8iPiYjMTYwMTsmIzE1NzU7JiMxNTg1OyYjMTU4NzsmIzE3NDA7IChQZXJzaWFuKTwvYT48L2xpPgogIDwvdWw+CgogIDxoMz5TZWNvbmQgRWRpdGlvbjwvaDM+CgogIDx1bCBjbGFzcz10cmFuc2xhdGlvbnM+CiAgICA8bGk+PGEgaHJlZj0iaHR0cHM6Ly9yYWJhaGJvdWRpYS5naXRib29rcy5pby9hcmFiaWMtZWxvcXVlbnQtanMvY29udGVudC9pbmRleC5odG1sIj4mIzE1OTM7JiMxNjE0OyYjMTU4NTsmIzE2MTQ7JiMxNTc2OyYjMTYxNjsmIzE2MTA7JiMxNjE3OyZscm07IChBcmFiaWMpPC9hPjwvbGk+CiAgICA8bGk+PGEgaHJlZj0iaHR0cHM6Ly90bzZlc2tvLmdpdGh1Yi5pby8iPiYjMTA0MTsmIzEwOTg7JiMxMDgzOyYjMTA3NTsmIzEwNzI7JiMxMDg4OyYjMTA4OTsmIzEwODI7JiMxMDgwOyAoQnVsZ2FyaWFuKTwvYT48L2xpPgogICAgPGxpPjxhIGhyZWY9Imh0dHBzOi8vYnJhemlsanMuZ2l0aHViLmlvL2Vsb3F1ZW50ZS1qYXZhc2NyaXB0LyI+UG9ydHVndSZlY2lyYztzIChQb3J0dWd1ZXNlKTwvYT48L2xpPgogICAgPGxpPjxhIGhyZWY9Imh0dHBzOi8va2FybWF6emluLmdpdGJvb2tzLmlvL2Vsb3F1ZW50amF2YXNjcmlwdF9ydS9jb250ZW50LyI+JiMxMDU2OyYjMTA5MTsmIzEwODk7JiMxMDg5OyYjMTA4MjsmIzEwODA7JiMxMDgxOyAoUnVzc2lhbik8L2E+PC9saT4KICA8L3VsPgoKPC9kaXY+CjwvYXJ0aWNsZT4K";
+    </script>
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eloquent JavaScript</title>
+  <link rel="stylesheet" href="./Fetch Page_files/ejs.css">
+  <style>
+    article { display: flex; margin: 0 2em; flex-wrap: wrap; max-width: none; max-width: calc(38em + 500px); }
+    #cover { flex-basis: 480px; max-width: 35em; flex-grow: 1; margin-right: 3em; }
+    #contents { flex-basis: 500px; flex-grow: 1; max-width: 35em;  }
+    #links { flex-basis: 100%; max-width: 35em; }
+    li.contents-intro:before { display: none; }
+    .toc h3 { float: right; font-family: inherit; margin: 0; font-weight: normal; font-size: 90%; }
+    @media screen and (max-width: 585px) { .toc h3 { display: none }}
+    @media screen and (max-width: 500px) { #cover { margin-right: 0 } article { margin: 0 } }
+    ul.links { list-style-type: circle; }
+    img.logo { vertical-align: text-top; padding: 0px 4px; border: 0; }
+  </style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.984.0" data-gr-ext-installed="">
+    <div id="searchBox">Type a URL here: <input type="text" id="urlBox"> <span id="goButton">GO</span></div>
+    <div id="tocContainer">
+        <div id="toc"><span id="fetch_page_TOC"></span><ul><li> Eloquent JavaScript  3rd edition (2018)</li><ul><li> Contents</li><ul><li> (Part 1: Language)</li><li> (Part 2: Browser)</li><li> (Part 3: Node)</li></ul><li> Other pages</li><li> Translations</li><ul><li> Third Edition</li><li> Second Edition</li></ul></ul></ul></div>
+    </div>
+    <div id="contents"><article>
+    <a href="#fetch_page_TOC">[Back to Top]</a>
+<div id="cover">
+
+  <p style="margin: 1em 0">
+    <a href="http://localhost:8080//eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fproduct%2F1593279507%2Fref%3Das_li_tl%3Fie%3DUTF8%26camp%3D1789%26creative%3D9325%26creativeASIN%3D1593279507%26linkCode%3Das2%26tag%3Dmarijhaver-20%26linkId%3Dd8642c0457954f03e27c02b0034d0d60">
+      <img src="./Fetch Page_files/cover.jpg" alt="Cover image" style="border: 1px solid black; max-width: 100%; box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.4)">
+    </a>
+  </p>
+
+  <h1><span id="fetch_page_TOC_1"></span><a href="#fetch_page_TOC_1">Eloquent JavaScript<div style="font-size: 70%">3rd edition (2018)</a></div></h1>
+
+  <p>This is a book about JavaScript, programming, and the wonders of
+  the digital. You can read it online here, or get your own
+  <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Fwww.amazon.com%2Fgp%2Fproduct%2F1593279507%2Fref%3Das_li_tl%3Fie%3DUTF8%26camp%3D1789%26creative%3D9325%26creativeASIN%3D1593279507%26linkCode%3Das2%26tag%3Dmarijhaver-20%26linkId%3Dd8642c0457954f03e27c02b0034d0d60">paperback
+  copy</a>.</p>
+
+  <p>Written by Marijn Haverbeke.</p>
+
+  <div style="font-size: 80%">
+  <p>Licensed under
+  a <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Fcreativecommons.org%2Flicenses%2Fby-nc%2F3.0%2F">Creative
+  Commons attribution-noncommercial license</a>. All code in this book
+  may also be considered licensed under
+  an <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Feloquentjavascript.net%2Fcode%2FLICENSE">MIT license</a>.</p>
+
+  <p>Illustrations by various artists: Cover and chapter illustrations
+  by <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Fmadalinatantareanu.com%2F">Madalina Tantareanu</a>.
+  Pixel art in Chapters 7 and 16 by Antonio Perdomo Pastor. Regular
+  expression diagrams in Chapter 9 generated
+  with <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Fregexper.com">regexper.com</a> by Jeff
+  Avallone. Village photograph in Chapter 11 by Fabrice Creuzot. Game
+  concept for Chapter 16 by <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Flessmilk.com">Thomas
+  Palef</a>.</p>
+
+  <p>The third edition was made possible
+  by <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2Fbackers3.html">325 financial backers</a>, most
+  notably <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Fnextjournal.com%2F"><img src="./Fetch Page_files/nextjournal.png" alt="Nextjournal" class="logo"></a> and <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Fwww.holbertonschool.com%2F"><img src="./Fetch Page_files/holberton.png" alt="Holberton School" class="logo"></a>. The second edition
+  was supported by <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2Fbackers.html">454 backers</a>, with
+  significant contributions
+  from <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Fwww.mozilla.org%2Fen-US%2F"><img src="./Fetch Page_files/mozilla_mini.png" alt="Mozilla" class="logo"></a>, <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Fwww.hackreactor.com%2F"><img src="./Fetch Page_files/hack_reactor_mini.png" alt="Hack Reactor" class="logo"></a>,
+  and <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Fwww.ghostery.com%2F"><img src="./Fetch Page_files/ghostery_mini.png" alt="Ghostery" class="logo"></a>.</p>
+  </div>
+
+</div>
+
+<div id="contents">
+
+  <h2>Contents</h2>
+
+  <ol class="toc">
+    <li class="contents-intro"><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F00_intro.html">Introduction</a>
+    </li><li>
+      <h3>(Part 1: Language)</h3>
+      <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F01_values.html">Values, Types, and Operators</a>
+    </li>
+    <li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F02_program_structure.html">Program Structure</a>
+    </li><li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F03_functions.html">Functions</a>
+    </li><li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F04_data.html">Data Structures: Objects and Arrays</a>
+    </li><li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F05_higher_order.html">Higher-order Functions</a>
+    </li><li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F06_object.html">The Secret Life of Objects</a>
+    </li><li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F07_robot.html">Project: A Robot</a>
+    </li><li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F08_error.html">Bugs and Errors</a>
+    </li><li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F09_regexp.html">Regular Expressions</a>
+    </li><li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F10_modules.html">Modules</a>
+    </li><li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F11_async.html">Asynchronous Programming</a>
+    </li><li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F12_language.html">Project: A Programming Language</a>
+    </li><li>
+      <h3>(Part 2: Browser)</h3>
+      <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F13_browser.html">JavaScript and the Browser</a>
+    </li>
+    <li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F14_dom.html">The Document Object Model</a>
+    </li><li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F15_event.html">Handling Events</a>
+    </li><li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F16_game.html">Project: A Platform Game</a>
+    </li><li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F17_canvas.html">Drawing on Canvas</a>
+    </li><li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F18_http.html">HTTP and Forms</a>
+    </li><li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F19_paint.html">Project: A Pixel Art Editor</a>
+    </li><li>
+      <h3>(Part 3: Node)</h3>
+      <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F20_node.html">Node.js</a>
+    </li>
+    <li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2F21_skillsharing.html">Project: Skill-Sharing Website</a>
+  </li></ol>
+
+</div>
+
+<div id="links">
+
+  <p>A paper version of Eloquent JavaScript, including an additional
+  chapter, is being brought out
+  by <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Fwww.nostarch.com%2Fejs3">No Starch Press</a>.</p>
+
+  <h2>Other pages</h2>
+
+  <ul class="links">
+    <li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2Fcode">Code sandbox and exercise solutions</a></li>
+    <li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2Ferrata.html">Errata for the paper book</a></li>
+    <li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2FEloquent_JavaScript.pdf">This book as a single PDF file</a> (&amp; <a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjavascript.net%2FEloquent_JavaScript_small.pdf">small version for mobile</a>)</li>
+    <li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Feloquentjavascript.net%2FEloquent_JavaScript.epub">This book as an EPUB file</a></li>
+    <li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Feloquentjavascript.net%2FEloquent_JavaScript.mobi">This book as a MOBI (Kindle) file</a></li>
+    <li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Feloquentjavascript.net%2F1st_edition">The first edition of the book</a></li>
+    <li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Feloquentjavascript.net%2F2nd_edition">The second edition of the book</a></li>
+  </ul>
+
+  <h2>Translations</h2>
+
+  <h3>Third Edition</h3>
+
+  <ul class="translations">
+    <li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=http%3A%2F%2Feloquentjs.ir%2F">فارسی (Persian)</a></li>
+  </ul>
+
+  <h3>Second Edition</h3>
+
+  <ul class="translations">
+    <li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Frabahboudia.gitbooks.io%2Farabic-eloquent-js%2Fcontent%2Findex.html">عَرَبِيّ‎ (Arabic)</a></li>
+    <li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Fto6esko.github.io%2F">Български (Bulgarian)</a></li>
+    <li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Fbraziljs.github.io%2Feloquente-javascript%2F">Português (Portuguese)</a></li>
+    <li><a href="http://localhost:8080/eloquent_js_clone/fetch_page.php?url=https%3A%2F%2Fkarmazzin.gitbooks.io%2Feloquentjavascript_ru%2Fcontent%2F">Русский (Russian)</a></li>
+  </ul>
+
+</div>
+</article>
+</div>
+
+</body></html>
