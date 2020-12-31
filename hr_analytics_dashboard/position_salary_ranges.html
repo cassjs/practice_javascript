@@ -25,22 +25,22 @@
             {
             label: 'min',
             data: data.min,
-            borderColor: 'rgba(99, 132, 255, 1)',
-            backgroundColor: 'rgba(99, 132, 255, 1))',
+            borderColor: 'rgba(91,137,173,0.65)',
+            backgroundColor: 'rgba(91,137,173,0.65)',
             borderWidth: 1
             },
             {
             label: 'mid',
             data: data.mid,
-            borderColor: 'rgba(91, 95, 151, 1)',
-            backgroundColor: 'rgba(91, 95, 151, 1)',
+            borderColor: 'rgba(85,47,173,0.65)',
+            backgroundColor: 'rgba(85,47,173,0.65)',
             borderWidth: 1
             },
             {
             label: 'max',
             data: data.max,
-            borderColor: 'rgba(255, 107, 108, 1)',
-            backgroundColor: 'rgba(255, 107, 108, 1)',
+            borderColor: 'rgba(91, 95, 151, 1)',
+            backgroundColor: 'rgba(91, 95, 151, 1)',
             borderWidth: 1
             }
         ]
@@ -72,7 +72,7 @@
                 },
                 ticks: {
                     callback: function(value, index, values) {
-                        return '$' + value;
+                        return '' + value;
                     }
                 }
             }],
