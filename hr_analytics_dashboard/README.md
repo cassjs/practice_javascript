@@ -19,7 +19,7 @@ None
 
 ## Program Output Example:
 **Position Salary Ranges ($USD):**\
-![](images/screenshot_program-output_1.png)\
+![](images/screenshot_program-output_1.png)
 
 **2020 Recruiting Source Costs ($USD):**\
-![](images/screenshot_program-output_1.png)
+![](images/screenshot_program-output_2.png)
