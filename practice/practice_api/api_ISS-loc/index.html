@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Plot Map Source: https://leafletjs.com/ -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <title>ISS Location</title>
+</head>
+<body>
+    <h1>Where is the ISS?</h1>
+
+    <p>
+        latitude: <span id="lat"></span>
+        <br/>
+        longitude: <span id="lon"></span>
+
+        <div id="issMapID"></div>
+
+    </p>
+
+    <script>
+        // Making a map & tiles
+        const mymap = L.map('issMapID').setView([0, 0], 1); //[lat, long, zoom lvl]
+
+        const attribution = 
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+
+
+        const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        const tiles = L.tileLayer(tileUrl, {attribution} );
+        tiles.addTo(mymap);
+
+        // Making marker with custom icon
+        const issIcon = L.icon({   //from leaflet icon documentation
+        iconUrl: 'images/iss200.png',  // Source: https://commons.wikimedia.org/wiki/File:International_Space_Station.svg
+        iconSize: [50, 32],
+        iconAnchor: [25, 16],
+        });
+
+        const marker = L.marker([0, 0], {icon: issIcon}).addTo(mymap); //this was taken from Leaflet marker docs
+        
+        // Source: https://wheretheiss.at/w/developer
+		const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
+
+        async function getISS () {
+            const response = await fetch(api_url);
+            const data = await response.json();
+            // console.log(data);
+            // console.log(data.latitude); // grabs lat
+            // console.log(data.longitude); // grabs lon
+
+            const { latitude, longitude } = data;
+
+            marker.setLatLng([latitude, longitude]); // allows to set to the new lat/lon
+
+            document.getElementById('lat').textContent = latitude;
+            document.getElementById('lon').textContent = longitude;
+            console.log(latitude); 
+            console.log(longitude); 
+
+        }
+
+        getISS();
+
+    </script>
+    
+</body>
+</html>
+
+<!-- 
+Fetching Data:
+1. Find the documentation for the API itself
+2. Check 'Authentication Requirements', some require sign-up and hiding the key in your code
+3. Check 'Rate Limiting', amount of requests limited
+4. Check 'End Points', describes URL path you can request a certain bit of data from 
+5. Start with an 'async function getData() {'
+6. Set 'const response = await fetch(url);'
+7. Convert the response into JSON using 'const data = await response.json();'
+8. Set 'Console.log(data)' and call the async function to get function to run: 'getData();'
+9. When the page loads, find the data you want in the console. 
+10. For example, if want to grab the latitude and longitude data, use 'console.log(data.latitude)' to grab data
+11. Then use JS destructuring to separate date into two variables. Like 'const { latitude, longitude } = data;'
+    Use 'console.log(longitude)' and 'console.log(longitude)'
+    (JS destructuring takes the two pieces like lon/lat out of a JS object, or in an array and puts them into 
+    separate variables)
+12. Redisplay elements: 
+    Create html paragraph like '<p>latitude: <span id="lat"></span></p>'
+    Then in script, use 'document.getElementById('lat').textContent = latitude;' to make data appear on webpage
+
+Plotting Point: (Using Leaflet.js = https://leafletjs.com/)
+1. Load leaflet library in <head> using quick start documentation
+2. Define where the map will go in <body> using '<div id="">'
+3. Apply styling to div in .css file so a map can appear
+4. Go back to documentation and create map using the JS instructions 
+5. Add a marker using leaflet.js marker object from documentation: 'const marker = L.marker([0, 0]).addTo(map);'
+6. Add an icon to your marker. 
+-->
