@@ -3,56 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Plot Map Source: https://leafletjs.com/ -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
-     <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
-
-    <title>Weather Forecast | Portland, OR</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>Weather Forecast | Portland, OR</h1>
-
-    <p>
-        latitude: <span id="lat"></span>
-        <br/>
-        longitude: <span id="lon"></span>
-
-        <div id="issMapID"></div>
-
-    </p>
-
-    <script>
-        const mymap = L.map('issMapID').setView([51.505, -0.09], 13); //[lat, long, zoom lvl]
-
-        // Source: https://openweathermap.org/current
-        const api_url = 'api.openweathermap.org/data/2.5/weather?q=Portland&appid=b6e53f851e233a110bc4d38eacadd5b9';
-
-        async function getData () {
-            const response = await fetch(api_url);
-            const data = await response.json();
-            console.log(data);
-            // console.log(data.latitude); // grabs lat
-            // console.log(data.longitude); // grabs lon
-
-            // const { latitude, longitude } = data;
-
-            // document.getElementById('lat').textContent = latitude;
-            // document.getElementById('lon').textContent = longitude;
-            // console.log(latitude); 
-            // console.log(longitude); 
-
-        }
-
-        getData();
-
-    </script>
     
 </body>
 </html>
-
