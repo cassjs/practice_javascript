@@ -1,8 +1,8 @@
 # Project - Cat Facts Generator
-**Author:**     Jessica Cassidy\
+**Author:**     Jessica Cassidy
 
 ## Description: 
-The Cat Facts application generates a random cat fact. The facts are sourced via the cat-facts Application Programming Interface (API) created by Alex Wohlbruck (Source: [cat-facts API](https://alexwohlbruck.github.io/cat-facts/).
+The Cat Facts application generates a random cat fact. The facts are sourced via the cat-facts Application Programming Interface (API) created by Alex Wohlbruck (Source: [cat-facts API](https://alexwohlbruck.github.io/cat-facts/)).
 
 **Input:**      
 None
