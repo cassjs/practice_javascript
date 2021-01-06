@@ -10,6 +10,7 @@
 
 **Future Updates:**
 - [ ] Hide API key - My plan is to eventually hide the API key after learning how. For now, I am removing API key before commiting code to public repo on GitHub.
+- [ ] Auto-detect location and set as default? 
 - [ ] For the location search function, I want to implement the a location API via a dropdown menu, possibly use Google Places API. 
 - [ ] Check if there is an option to add data on expected rainfall for the day? If not, switch to another API? 
 - [ ] Add text warnings for incoming rainfall within the next hour. 
