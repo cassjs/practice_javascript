@@ -11,14 +11,24 @@
 </head>
 <body>
     <div id="container">
-        <h1>🌦 Weather Forecast by City/State</h1>
+        <h1>🌦 Weather Forecast</h1>
 
-        <span id="dataResult"></span>
-        <br><br>
+        <input type="search" id="citySearch" onsearch="getData()" placeholder="Enter City">
+        <button id="bttn" onclick="getData()"> Search Location </button>
 
-        <button id="btn">Submit</button>
+        <h3>Location</h3>
+        City: <span id="citySearch"></span><br>
+        Region: <span id="region"></span><br>
+
+        <h3>Current Conditions</h3>
+        Temp (f): <span id="temp"></span><br>
+        Condition: <span id="condition"></span><br>
+        Precipitation: <span id="precipitation"></span><br>
+        Wind (mph): <span id="wind"></span><br>
+        Humidity: <span id="humidity"></span><br>
+        Last Updated: <span id="updated"></span>
         <br><br>
-        Source: <a href="https://openweathermap.org/api/one-call-api">Open Weather API</a>
+        Powered By:<br> <a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com" border="0"></a>
     </div>
 
     <script src="fetch.js"></script>
