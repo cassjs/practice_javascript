@@ -1,9 +1,14 @@
 async function getData() {
     //Source: Weather API - https://www.weatherapi.com/docs/
-    const apiKey = ''; // Removed - need to hide key
+    const api_key = process.env.API_KEY;
     const inputCity = document.getElementById("citySearch").placeholder;
-    const apiUrl = 'http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${inputCity}';
+    const api_url = 'http://api.weatherapi.com/v1/current.json?key=${api_key}&q=${inputCity}';
     // const apiUrl = 'http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Portland';
+    
+    console.log(process.env);
+    
+    require('dotenv').config()
+    
 
     const response = await fetch(apiUrl);
     const data = await response.json();
