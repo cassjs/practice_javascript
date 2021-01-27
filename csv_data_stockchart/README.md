@@ -10,4 +10,4 @@ None
 Displays fetched data from a local .csv file.
 
 ## Program Output Example:
-![](images/screenshot_program-output.png)
+![](screenshot_program-output.png)
