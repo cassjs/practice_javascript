@@ -6,7 +6,7 @@ This was an exercise practicing using Exceljs via NPM and Node.js to render a .x
 **Input:** None
 
 **Output:**     
-- Displays JSON data in excel spreadsheet format.\
+- Displays JSON data in excel spreadsheet format.
 - Data Source: https://raw.githubusercontent.com/Currie32/500-Greatest-Albums/master/albumlist.csv
 
 ## Program Output Example:
